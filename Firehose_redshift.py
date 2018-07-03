@@ -31,11 +31,8 @@ while True:
     data['country'] = fake.country()
     data['login_time'] = time.time()
     data['movie_watchedtched'] = random.choice(movies_watched)
-    #client.put_record(
-     #   DeliveryStreamName='string',
-      ##     'Data': json.dumps(data)
-        #}
-    #)
+    client.put_record(
+        DeliveryStreamName='string', 'Data': json.dumps(data))
     logging.info("record streamed to kinesis : {}".format(data))
 
 

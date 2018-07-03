@@ -29,9 +29,9 @@ while True:
     data['city'] = fake.city()
     data['country'] = fake.country()
     data['login_time'] = time.time()
-    data['movie_watchedtched'] = random.choice(movies_watched)
+    data['movie'] = random.choice(movies_watched).decode('utf-8')
     client.put_record(
-        DeliveryStreamName='firehoses3',
+        DeliveryStreamName='firehoseRedshift',
         Record={'Data': json.dumps(data)
                 }
     )

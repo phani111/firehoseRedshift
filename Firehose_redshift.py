@@ -18,6 +18,7 @@ movies_watched = [
     'mahanati',
     'sanju', 'hello',
     'ragngasthalam',
+    'toi'
 ]
 
 # create a dict within while loop which is always true

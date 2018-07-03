@@ -10,17 +10,15 @@ fake = Faker()
 
 client = boto3.client('firehose')
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 #  create a list
 
 movies_watched = [
-    'lust stories',
+    'luv stories',
     'mahanati',
     'sanju', 'hello',
     'ragngasthalam',
 ]
-
-
 
 # create a dict within while loop which is always true
 data = {}
@@ -32,7 +30,10 @@ while True:
     data['login_time'] = time.time()
     data['movie_watchedtched'] = random.choice(movies_watched)
     client.put_record(
-        DeliveryStreamName='string', 'Data': json.dumps(data))
+        DeliveryStreamName='firehoses3',
+        Record={'Data': json.dumps(data)
+                }
+    )
     logging.info("record streamed to kinesis : {}".format(data))
 
 

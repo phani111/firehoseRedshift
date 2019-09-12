@@ -1,0 +1,39 @@
+buckets:
+    acn-pt-ngbi-dev-nda-raw-01:
+      # The target table is not applicable here
+      raw/priceable :
+          #target_gcs_path: 'raw/customer/callrecords'
+          target_table: 'D_PRICEABLE_ITEM'
+          appId: 'Jeff_Priceable_Pipeline_Manjit'
+          programType: 'workflow'
+          programId: 'DataPipelineWorkflow'
+
+      raw/customer :
+          #target_gcs_path: 'raw/customer/updates'
+          target_table: 'D_CUSTOMER'
+          appId: 'df_pipeline_updates'
+          programType: 'workflow'
+          programId: 'DataPipelineWorkflow'
+          
+      raw/discount :
+          #target_gcs_path: 'raw/customer/updates'
+          target_table: 'D_DISCOUNT_PLAN'
+          appId: 'D_Discount_Plan_wf'
+          programType: 'workflow'
+          programId: 'DataPipelineWorkflow'
+          
+      raw/measurement :
+          #target_gcs_path: 'raw/customer/updates'
+          target_table: 'D_MEASUREMENT_UNIT'
+          appId: 'D_Measurement_Unit_wf'
+          programType: 'workflow'
+          programId: 'DataPipelineWorkflow'
+          
+      raw/adjustment :
+          #target_gcs_path: 'raw/customer/updates'
+          target_table: 'acn_pt_ngbi_dev_nda_cim_adj_01'
+          appId: 'acn-pt-ngbi-dev-nda-cim-adj-01'
+          programType: 'workflow'
+          programId: 'DataPipelineWorkflow'
+
+ 
